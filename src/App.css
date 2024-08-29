@@ -1,0 +1,10 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.app_wrapper{
+    background-color:#3d043ddc;
+    min-height: 100vh;
+}

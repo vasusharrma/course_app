@@ -1,5 +1,3 @@
-import { getByTitle } from "@testing-library/react";
-
 export const filterData = [
     {
         id:'1',
