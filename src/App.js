@@ -8,7 +8,9 @@ import { useState } from 'react';
 
 function App() {
 
- const[courseData , setCourseData] = useState([]);  
+ const[courseData , setCourseData] = useState(null);  
+
+ const [preCards , setPreCards] = useState(false);
 
   useEffect(()=>{
 
@@ -19,6 +21,7 @@ function App() {
         const dataResponse = await dataIs.json();
         console.log("in app.js" , dataResponse);
         setCourseData(dataResponse.data);
+        setPreCards(true);
       }
       catch(e){
         console.log(e);
@@ -29,12 +32,16 @@ function App() {
 
   },[])
 
+  
+
   return (
     <div className="App">
       <Nav/>
       <div className='app_wrapper'>
         <Filter filterData={filterData}/>
-        <Cards courseData = {courseData}/> 
+        {
+      preCards? (<Cards courseData = {courseData}/> ):( <div>Finding Cards</div>)
+        }
       </div>
     </div>
   );
