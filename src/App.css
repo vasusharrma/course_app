@@ -7,4 +7,5 @@
 .app_wrapper{
     background-color:#3d043ddc;
     min-height: 100vh;
+    padding-bottom: 2rem;
 }

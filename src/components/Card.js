@@ -1,15 +1,29 @@
 import "./Card.css";
-import { FcLike } from "react-icons/fc";
+import { FcLike , FcLikePlaceholder } from "react-icons/fc";
 
-function Card({ allValue, id }) {
+function Card({ allValue, id  , likeBtn , setLikeBtn}) {
+  
+
+function likeHandler(){
+
+ 
+  
+  (likeBtn.includes(id) ? setLikeBtn((prev) => prev.filter(((cd) => cd !== id))): ((likeBtn.length === 0 ? setLikeBtn([id]):setLikeBtn((prev) => [...prev , id]))));
+
+  console.log(likeBtn);
+}
+
+
   return (
     <div className="card_outside">
       <div className="card_image_outside">
         <div className="card_image_inside">
           <img id="card_image" src={allValue.image.url} />
         </div>
-        <button className="card_btn">
-          <FcLike id="card_btn_icon" />
+        <button className="card_btn" onClick={likeHandler}>
+          {
+          (likeBtn.includes(id)?<FcLike fontSize="1.35rem"/>:<FcLikePlaceholder fontSize="1.35rem"/>)
+          }
         </button>
       </div>
 
