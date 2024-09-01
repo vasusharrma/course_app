@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+button , a {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 .app_wrapper{
     background-color:#3d043ddc;
     min-height: 100vh;
