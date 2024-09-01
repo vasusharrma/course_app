@@ -22,7 +22,7 @@ function likeHandler(){
         </div>
         <button className="card_btn" onClick={likeHandler}>
           {
-          (likeBtn.includes(id)?<FcLike fontSize="1.35rem"/>:<FcLikePlaceholder fontSize="1.35rem"/>)
+          (likeBtn.includes(id)?<FcLike className="fc_btn" fontSize="1.35rem"/>:<FcLikePlaceholder className="fc_btn" fontSize="1.35rem"/>)
           }
         </button>
       </div>
