@@ -12,6 +12,8 @@ function App() {
 
  const [preCards , setPreCards] = useState(false);
 
+ const [filterCards , setFilterCards] = useState('All');
+
   useEffect(()=>{
 
     const fetchCourses = async () => {
@@ -38,9 +40,9 @@ function App() {
     <div className="App">
       <Nav/>
       <div className='app_wrapper'>
-        <Filter filterData={filterData}/>
+        <Filter filterData={filterData} filterCards={filterCards} setFilterCards={setFilterCards}/>
         {
-      preCards? (<Cards courseData = {courseData}/> ):( <div>Finding Cards</div>)
+      preCards? (<Cards courseData = {courseData} filterCards = {filterCards}/> ):( <div>Finding Cards</div>)
         }
       </div>
     </div>

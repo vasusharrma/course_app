@@ -2,25 +2,33 @@ import "./Cards.css";
 import Card from "./Card";
 import { useState } from "react";
 
-function Cards({ courseData }) {
+function Cards({ courseData , filterCards}) {
 
   const [likeBtn , setLikeBtn] = useState([]);
   
 
 
 
-
   function getAllCourse() {
+
     let courses = [];
+    if(filterCards === 'All'){
     Object.values(courseData).forEach((array) => {
       array.forEach((el) => {
         courses.push(el);
       });
-      // courses.push(array);
     });
-    console.log("data of getting");
-    console.log(courses);
-    return courses;
+   return courses;
+    }
+    else{
+      if(filterCards !== null){
+         return courseData[filterCards]; 
+      }
+
+      else{
+        return <div><h1>Loading</h1></div>
+      }
+    }
   }
 
   getAllCourse();
